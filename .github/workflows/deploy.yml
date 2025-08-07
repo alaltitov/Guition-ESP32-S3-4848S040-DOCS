@@ -38,13 +38,13 @@ jobs:
       
       - name: Build Guition ESP32-S3 documentation
         run: |
-          npm run docs:build
-          touch docs/.vitepress/dist/.nojekyll
+          npm run build
+          touch .vitepress/dist/.nojekyll
       
       - name: Upload documentation artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: .vitepress/dist
 
   deploy:
     name: Deploy Guition Documentation
