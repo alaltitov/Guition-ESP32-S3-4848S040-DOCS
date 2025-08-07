@@ -1,0 +1,39 @@
+:root {
+  --vp-c-tip-1: var(--vp-c-green-1);
+  --vp-c-tip-2: var(--vp-c-green-2);
+  --vp-c-tip-3: var(--vp-c-green-3);
+  --vp-c-tip-soft: var(--vp-c-green-soft);
+}
+
+/* Стилизация заголовков */
+.vp-doc h1 {
+  color: var(--vp-c-brand);
+}
+
+.vp-doc h2 {
+  color: var(--vp-c-brand-2);
+}
+
+.vp-doc h3 {
+  color: var(--vp-c-brand-3);
+}
+
+.vp-doc a {
+  text-decoration: none;
+  color: var(--vp-c-brand-1);
+  transition: color 0.2s ease;
+}
+
+.vp-doc a:hover {
+  color: var(--vp-c-brand-2);
+  text-decoration: none;
+}
+
+/* Для внешних ссылок */
+.vp-doc a[href^="http"] {
+  text-decoration: none;
+}
+
+.vp-doc a[href^="http"]:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,56 @@
+name: Deploy Guition ESP32-S3 Documentation
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: guition-docs-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build Guition Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Guition ESP32-S3 docs
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+      
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+      
+      - name: Install documentation dependencies
+        run: npm ci
+      
+      - name: Build Guition ESP32-S3 documentation
+        run: |
+          npm run docs:build
+          touch docs/.vitepress/dist/.nojekyll
+      
+      - name: Upload documentation artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    name: Deploy Guition Documentation
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy Guition ESP32-S3 docs to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

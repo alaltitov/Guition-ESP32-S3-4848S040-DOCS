@@ -1,0 +1,33 @@
+{
+  "name": "guition-esp32-s3-4848s040-docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alaltitov/Guition-ESP32-S3-4848S040-DOCS.git"
+  },
+  "keywords": [
+    "esp32-s3",
+    "homeassistant",
+    "documentation",
+    "docs",
+    "esphome",
+    "iot",
+    "guition",
+    "thermostat",
+    "firmware"
+  ],
+  "author": "Alexey Titov",
+  "license": "MIT",
+  "description": "Documentation for Guition ESP32-S3-4848S040",
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "vue": "^3.5.18"
+  }
+}
