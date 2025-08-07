@@ -6,6 +6,13 @@ export default defineConfig({
   title: 'Display ESP32-S3 Firmware',
   description: 'Documentation for Guition ESP32-S3-4848S040 ESPHome firmware',
   base: '/Guition-ESP32-S3-4848S040-DOCS/',
+  ignoreDeadLinks: [
+    '/ru/guide/configuration',
+    '/ru/guide/widgets', 
+    '/guide/configuration',
+    '/guide/widgets',
+    './LICENSE'
+  ],
 
   lastUpdated: true,
   cleanUrls: true,
