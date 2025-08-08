@@ -11,13 +11,11 @@ export default defineConfig({
     '/ru/guide/widgets', 
     '/guide/configuration',
     '/guide/widgets',
-    './LICENSE'
   ],
 
   lastUpdated: true,
   cleanUrls: true,
 
-  // Добавляем Яндекс.Метрику
   head: [
     [
       'script',
